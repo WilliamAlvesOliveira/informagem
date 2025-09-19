@@ -3,7 +3,6 @@
 }
 
 #pageContainer {
-
     display: grid;
     grid-template-columns: 40% 60%;
     grid-template-rows: 70% 27% 3%;
@@ -102,10 +101,54 @@ form button {
     height: 35%;
 }
 
+#login a{
+    padding: 0;
+    margin-top: 5px;
+}
+
 a {
     grid-column: 1 / span 2;
 
     margin-top: 30px;
 
     text-align: center;
+}
+
+@media(max-width: 600px){
+    #pageContainer{
+        grid-template-rows: 80% 17% 3%;
+        aspect-ratio: 1/1;
+
+        width: 98%;
+    }
+
+    #enfermeiro{
+        width: 100%;
+        height: auto;
+        align-self: flex-end;
+    }
+
+    #login{
+        display: flex;
+    }
+
+
+    #formulario{
+        height: 100%;
+        width: 100%;
+        align-self: end;
+    }
+
+    .form-field{
+        margin-top: 1px;
+    }
+
+    .form-field p{
+        font-size: 8px;
+        height: 8px;
+    }
+
+    form button{
+        padding: 2px;
+    }
 }

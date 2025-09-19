@@ -1,0 +1,111 @@
+#loginPage {
+    height: 96vh;
+}
+
+#pageContainer {
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 70% 27% 3%;
+    gap: 1px;
+
+    aspect-ratio: 10 / 6;
+    max-width: 800px;
+    width: 86vw;
+}
+
+#enfermeiro {
+    justify-self: flex-end;
+    grid-column: 1;
+    grid-row: 1;
+
+    height: 100%;
+}
+
+#login {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: flex-start;
+    align-content: center;
+    align-items: start;
+
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    width: 250px;
+    max-width: 90%;
+    height: 250px;
+    max-height: 100%;
+    margin-left: 15px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    margin-bottom: 3px;
+}
+
+.form-field input {
+    border-radius: 5px;
+}
+
+form button {
+    width: 90%;
+    padding: 5px;
+    margin-top: 2px;
+    border-radius: 5px;
+
+    color: #FFFFFF;
+    font-weight: bold;
+
+    background-color: #5697DB;
+}
+
+.err-msg {
+    height: 12px;
+
+    font-size: 12px;
+    color: red;
+}
+
+#logoEvolution {
+    justify-self: flex-end;
+
+    height: 100%;
+}
+
+#logoContainer {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: flex-start;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+#logoName {
+    align-self: flex-start;
+
+    max-width: 600px;
+    height: 45%;
+}
+
+#logoLamp {
+    height: 35%;
+}
+
+a {
+    grid-column: 1 / span 2;
+
+    margin-top: 30px;
+
+    text-align: center;
+}

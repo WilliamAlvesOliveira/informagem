@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informagem</title>
+    <title>Informagem - login</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/login-page.css">
 
@@ -11,33 +11,47 @@
 
 <body id="loginPage" class="center-flex">
     <main id="pageContainer" class="center-flex">
-        <img id="enfermeiro" src="./src/imagens/enfermeiros/enfermeiro-g.png" alt="Ilustração de um enfermeiro">
+        <picture id="logo">
+            <source media="(min-width: 400px)" srcset="./src/imagens/name-logo/name-logo.png">
+            <img src="./src/imagens/name-logo/name-logo-m.png" alt="Imformagem">
+        </picture>
         
-        <section id="login">
+        <section id="login" class="center-flex">
+            <picture id="enfermeiro">
+                <source media="(min-width: 800px)" srcset="./src/imagens/enfermeiros/enfermeiro-g.png">
+                <source media="(min-width: 400px)" srcset="./src/imagens/enfermeiros/enfermeiro-m.png">
+                <img src="./src/imagens/enfermeiros/enfermeiro-p.png" alt="imagem de um enfermeiro">
+            </picture>
+
             <form id="formulario" class="center-flex" >
-                <div class="form-field">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                    <p class="err-msg" aria-live="polite"></p>
-                </div>
+                <div id="formContainer" class="center-flex">
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <p class="err-msg" aria-live="polite">não encontrado</p>
+                    </div>
 
-                <div class="form-field">
-                    <label for="password">Senha</label>
-                    <input id="password" type="password" name="password" required>
-                    <p class="err-msg" aria-live="polite"></p>
+                    <div class="form-field">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" required>
+                        <p class="err-msg" aria-live="polite"></p>
+                    </div>
+
+                    <button id="login-btn">Login</button>
+
+                    <a href="#">Cadastrar</a>
                 </div>
-                <button>Entrar</button>
-                <a href="#">Cadastrar</a>
             </form>
+
         </section>
+        
+        <picture id="evolutionLogo">
+            <img src="src/imagens/informagem-evolution/informagem-evolution-logo-p.png" alt="Logo de evolução da página informagem">
+        </picture>
+        
+        <img id="lampada" src="src/imagens/lampada-image/lampada-g .png" alt="Imagem de uma lâmpada a gás simbolo da enfermagem">
 
-        <img id="logoEvolution" src="./src/imagens/informagem-evolution/informagem-evolution-g.png" alt="logo evolução Informagem">
-
-        <div id="logoContainer" class="center-flex">
-            <img id="logoName" src="./src/imagens/name-logo/name-logo-m.png" alt="Informagem">
-            <img id="logoLamp" src="./src/imagens/lampada-image/lampada-g .png" alt="lâmpada a gás, simbolo da enfermagem">
-        </div>
-        <a href="./home.html">entrar como convidado</a>
+        <a href="home.html"> entrar como convidado</a>
     </main>
 </body>
 </html>

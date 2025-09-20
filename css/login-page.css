@@ -1,117 +1,90 @@
-#loginPage {
-    height: 96vh;
+#loginPage{
+    height: 98vh;
 }
 
-#pageContainer {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 70% 27% 3%;
-    gap: 1px;
-
-    aspect-ratio: 10 / 6;
-    max-width: 800px;
-    width: 86vw;
+#pageContainer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-#enfermeiro {
-    justify-self: flex-end;
-    grid-column: 1;
-    grid-row: 1;
-
-    height: 100%;
+#logo{
+    width: 90vw;
+    max-width: 500px;
 }
 
-#login {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: flex-start;
-    align-content: center;
-    align-items: start;
-
+#logo img{
+    margin: auto;
     width: 100%;
-    height: 100%;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+#login{
+    width: 96vw;
+    max-width: 500px;
+}
 
+#enfermeiro{
+    display: flex;
+    width: 50%;
+}
+
+#enfermeiro img{
+    width: 100%;
+    align-self: flex-end;
+}
+
+#formulario{
+    width: 100%;
+}
+
+#formContainer{
+    justify-self: flex-start ;
     background-color: white;
-    width: 250px;
-    max-width: 90%;
-    height: 250px;
-    max-height: 100%;
-    margin-left: 15px;
+    padding: 5px;
+    flex-direction: column;
+    width: 90%;
+    max-width: 200px;
 }
 
-.form-field {
+.form-field{
     display: flex;
     flex-direction: column;
-
-    width: 90%;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
-.form-field input {
-    border-radius: 5px;
-}
-
-form button {
-    width: 90%;
-    padding: 5px;
-    margin-top: 2px;
-    border-radius: 5px;
-
-    color: #FFFFFF;
-    font-weight: bold;
-
-    background-color: #5697DB;
-}
-
-.err-msg {
-    height: 12px;
-
-    font-size: 12px;
+.form-field .err-msg{
     color: red;
+    font-size: 12px;
+    height: 12px;
 }
 
-#logoEvolution {
-    justify-self: flex-end;
-
-    height: 100%;
+#formContainer button{
+    padding:4px ;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-#logoContainer {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: flex-start;
+#login-btn{
+    background-color: #5697DB;
+    color: white;
+}
+
+#evolutionLogo{
+    display: flex;
     flex-direction: column;
-
-    height: 100%;
-}
-
-#logoName {
-    align-self: flex-start;
-
-    max-width: 600px;
-    height: 45%;
-}
-
-#logoLamp {
-    height: 35%;
-}
-
-#login a{
+    max-width: 400px;
+    width: 100%;
     padding: 0;
-    margin-top: 5px;
 }
 
-a {
-    grid-column: 1 / span 2;
+#evolutionLogo img{
+    align-self: center;
+    width: 40%;
+}
 
-    margin-top: 30px;
-
-    text-align: center;
+#lampada{
+    width: 70px;
 }
 
 @media(max-width: 600px){
@@ -122,25 +95,16 @@ a {
         width: 98%;
     }
 
-    #enfermeiro{
-        width: 100%;
-        height: auto;
-        align-self: flex-end;
-    }
-
-    #login{
-        display: flex;
-    }
-
-
     #formulario{
         height: 100%;
         width: 100%;
         align-self: end;
+        font-size: 14px;
     }
 
     .form-field{
         margin-top: 1px;
+        
     }
 
     .form-field p{
@@ -150,5 +114,23 @@ a {
 
     form button{
         padding: 2px;
+    }
+}
+
+@media (max-height: 600px){
+    #logo img{
+        width: 40%;
+    }
+
+    #login{
+        width:70%;
+    }
+
+    #evolutionLogo{
+        width: 40%;
+    }
+
+    #lampada{
+        width: 30px;
     }
 }

@@ -1,0 +1,46 @@
+#disciplinas{
+    flex-direction: column;
+    text-align: center;
+}
+
+main{
+    max-width: 1000px;
+    padding: 10px;
+}
+
+main section{
+    margin-bottom: 30px;
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+main p{
+    max-width: 800px;
+    text-align: left;
+    text-indent: 30px;
+    line-height: 1.6em;
+    margin-bottom:5px;
+}
+
+main > section > a{
+    margin-bottom: 30px;
+}
+
+.disciplina-container{
+    background-color: var(--text-bg-white);
+    padding: 15px;
+    border: 2px solid red;
+    border-radius: 5px;
+}

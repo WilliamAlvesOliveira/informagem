@@ -3,6 +3,25 @@
     text-align: center;
 }
 
+header{
+    margin-top: 5px;
+    flex-direction: column;
+    max-width: 400px;
+    width: 50vw;
+}
+
+#evolution{
+    width: 30%;
+}
+
+#logoName{
+    width: 60%;
+}
+
+#logoLamp{
+    width: 8%;
+}
+
 main{
     max-width: 1000px;
     padding: 10px;
@@ -44,3 +63,5 @@ main > section > a{
     border: 2px solid red;
     border-radius: 5px;
 }
+
+footer{margin-bottom: 15px;}

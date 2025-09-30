@@ -1,0 +1,153 @@
+#orgaosVitais{
+    flex-direction: column;
+}
+
+header{
+    margin-top: 5px;
+    flex-direction: column;
+    max-width: 400px;
+    width: 50vw;
+}
+
+#evolution{
+    width: 30%;
+}
+
+#logoName{
+    width: 60%;
+}
+
+#logoLamp{
+    width: 8%;
+}
+
+h1, h2{
+    font-family: 'Niconne', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+h1{
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--font-green);
+    text-shadow: 3px 3px 5px #64f6547a;
+}
+
+h2{
+    font-size: 2em;
+    color: var(--red2);
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+main{
+    flex-direction: column;
+    background-color: var(--text-bg-white);
+    max-width: 1000px;
+    width: 100%;
+    padding: 10px;
+    padding-top: 30px;
+    border-radius: 10px;
+    outline: 1px solid var(--red2);
+    box-shadow: 10px 10px 15px #3b01013a;
+    margin-bottom: 20px;
+}
+
+main p{
+    line-height: 1.6em;
+}
+
+section{
+    flex-direction: column;
+}
+
+main section p, ul{
+    max-width: 800px;
+}
+
+main section p, article p{
+    text-indent: 30px;
+}
+
+hr{
+    background-image: url('../../src/imagens/backgroundImages/batimentos-bg.png');
+    background-size: contain;
+    width: 100%;
+    height: 70px;
+    border: none;
+}
+
+main section ul{
+    margin-top: 10px;
+    list-style: none;
+}
+
+main section li{
+    margin-bottom: 15px;
+}
+
+#deepDive{
+    margin-bottom: 50px;
+}
+
+#indice{
+    width: 100%;
+}
+
+#indice h2{
+    justify-self: center;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+}
+
+#indice ul{
+    display: flex;
+    justify-self: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid var(--font-green);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#indice li{
+    background-image: var(--gradient-green1);
+    width: 150px;
+    height: 50px;
+
+    color: var(--font-green);
+    text-align: center;
+
+    border: 1px solid var(--font-green);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+main article{
+    margin-bottom: 50px;
+}
+
+main article p{
+    max-width: 800px;
+    width: 100%;
+}
+
+.orgaos-vitais-img{
+    width: 30%;
+    max-width: 200px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+#aqCerebro{
+    float: right;
+}
+
+#aqCoracao{
+    float: left;
+}
+

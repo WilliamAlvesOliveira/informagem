@@ -19,6 +19,7 @@ body{
 
     --green1: #A2F899; --green2: #63F654; --green3: #4DC141;
     --font-green: #063F00; 
+    --gradient-green1: linear-gradient(var(--green1),var(--green2));
     --gradient-green2: linear-gradient(var(--green2),var(--green3));
     
     --blue1: #7f9bcd; --blue2: #375b9d; --blue3: #051B43;

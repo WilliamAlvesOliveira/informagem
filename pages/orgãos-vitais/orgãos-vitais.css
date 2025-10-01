@@ -1,5 +1,6 @@
 #orgaosVitais{
     flex-direction: column;
+    
 }
 
 header{
@@ -92,62 +93,101 @@ main section li{
     margin-bottom: 50px;
 }
 
-#indice{
-    width: 100%;
-}
-
-#indice h2{
-    justify-self: center;
-    width: 100%;
-    max-width: 800px;
-    text-align: left;
-}
-
-#indice ul{
-    display: flex;
-    justify-self: center;
-    justify-content: space-evenly;
+#orgaosVitaisCards{
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
-    border-bottom: 1px solid var(--font-green);
-    border-radius: 5px;
-    margin-bottom: 30px;
+    gap: 15px;
+    width: 100%;
 }
 
-#indice li{
-    background-image: var(--gradient-green1);
-    width: 150px;
-    height: 50px;
+#orgaosVitaisCards h2{
+    width: 100%;
+}
 
+.orgaos-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background-color: #e6f3eb;
+    width: 100%;
+    height: 400px;
+    max-width: 250px;
+    padding: 5px;
+    border: 1px solid var(--font-green);
+    border-radius: 10px;
+}
+
+.orgaos-card h3{
+    font-family: 'Niconne', Arial, Helvetica, sans-serif;
+    color: var(--font-green);
+    font-size: clamp(1em, 6vw, 1.7em);
+    font-weight: 500;
+}
+
+.orgaos-card img{
+    width: 60%;
+    border-radius: 3px;
+}
+
+.orgaos-card h4{
+    margin: 3px;
+}
+
+.orgaos-card-info{
+    flex-grow: 1;
+}
+
+.orgaos-card ul{
+    list-style: disc;
+}
+
+.orgaos-card li{
+    margin-bottom: 3px;
+}
+
+.orgaos-card a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--gradient-green1);
+    width: 70%;
+    height: 50px;
     color: var(--font-green);
     text-align: center;
+    text-decoration: none;
+    border: 1px solid var(--font-green);
+    border-radius:5px;
+}
 
+#btnVoltar{
+    background-image: var(--gradient-green1);
+    width: 100px;
+    height: 30px;
+    color: var(--font-green);
+    text-decoration: none;
     border: 1px solid var(--font-green);
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 30px;
 }
 
-main article{
-    margin-bottom: 50px;
+@media (max-width: 800px){
+    .orgaos-card{
+        width: 45%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .orgaos-card-info{
+        display: none;
+    }
 }
 
-main article p{
-    max-width: 800px;
-    width: 100%;
+@media (hover: hover) and (pointer: fine){
+    .orgaos-card a:hover{
+        background-image: var(--gradient-green2);
+    }
+    #btnVoltar:hover{
+        background-image: var(--gradient-green2);
+    }
 }
-
-.orgaos-vitais-img{
-    width: 30%;
-    max-width: 200px;
-    border-radius: 20px;
-    margin: 5px;
-}
-
-#aqCerebro{
-    float: right;
-}
-
-#aqCoracao{
-    float: left;
-}
-

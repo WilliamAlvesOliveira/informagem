@@ -7,6 +7,10 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    background-color: transparent;
+    outline: none;
+    border-radius: 0px;
+    box-shadow: none;
 }
 
 #logo{

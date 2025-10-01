@@ -43,23 +43,6 @@ h2{
     margin-bottom: 10px;
 }
 
-main{
-    flex-direction: column;
-    background-color: var(--text-bg-white);
-    max-width: 1000px;
-    width: 100%;
-    padding: 10px;
-    padding-top: 30px;
-    border-radius: 10px;
-    outline: 1px solid var(--red2);
-    box-shadow: 10px 10px 15px #3b01013a;
-    margin-bottom: 20px;
-}
-
-main p{
-    line-height: 1.6em;
-}
-
 section{
     flex-direction: column;
 }
@@ -161,12 +144,12 @@ main section li{
 }
 
 #btnVoltar{
-    background-image: var(--gradient-green1);
+    background-color: var(--blue2);
     width: 100px;
     height: 30px;
-    color: var(--font-green);
+    color: white;
     text-decoration: none;
-    border: 1px solid var(--font-green);
+    border: 1px solid white;
     border-radius: 5px;
     margin: 30px;
 }
@@ -188,6 +171,6 @@ main section li{
         background-image: var(--gradient-green2);
     }
     #btnVoltar:hover{
-        background-image: var(--gradient-green2);
+        background-color: var(--blue3);
     }
 }

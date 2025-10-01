@@ -109,15 +109,8 @@ h1{
 }
 
 main{
-    background-color: var(--text-bg-white);
-    width: 100%;
-    max-width:1200px;
     overflow-y: auto;
-
     margin: auto;
-    border-radius: 5px;
-    outline: 2px solid var(--red2);
-    box-shadow: 10px 10px 15px #3b01013a;
 }
 
 

@@ -11,6 +11,40 @@
     <link rel="stylesheet" href="./coracao.css">
 </head>
 <body id="coracaoPage" class="center-flex">
+
+    <div id="menu-container">
+        <div id="menu-btn">
+            <button class="menu-open-close-btn menu-close-btn" aria-expanded="false">
+                <span id="btn-text">abrir indice</span>
+                <span id="btn-arrow">➤</span>
+            </button>
+        </div>
+
+        <nav id="coracaoIndice"
+            class="close-menu"
+            aria-label  ="Indice coração"
+            aria-hidden="true"
+        >
+
+            <div id="container-opcoes">
+                <h2>Indice:</h2>
+                <h3>Anatomia do Coração</h3>
+                <ul>
+                    <li data-scroll-to="camarasDoCoracao" >Câmaras do Coração</li>
+                    <li >Válvulas Cardíacas</li>
+                    <li >Vasos Sanguíneos Principais</li>
+                </ul>
+
+                <h3>Funcionamento do Coração</h3>
+                <ul>
+                    <li>Circulação Dupla</li>
+                    <li data-scroll-to="batimentosCardiacos">Batimentos Cardíacos</li>
+                    <li data-scroll-to="cicloCardiaco">Ciclo Cardíaco</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
     <nav 
     id="backward-buttons"
     data-auto-hide 
@@ -39,7 +73,7 @@
 
         <p>O coração humano é um órgão muscular oco, localizado no centro do tórax, ligeiramente inclinado para a esquerda. Sua principal função é bombear o sangue, garantindo que oxigênio e nutrientes cheguem a todos os tecidos do corpo. Para cumprir essa tarefa, o coração apresenta uma estrutura organizada em câmaras, válvulas e grandes vasos sanguíneos.</p>
 
-        <h3>🔹 Câmaras do Coração</h3>
+        <h3 id="camarasDoCoracao">🔹 Câmaras do Coração</h3>
 
         <p>O coração é dividido em quatro cavidades, que trabalham de forma coordenada:</p>
 
@@ -108,14 +142,14 @@
             </li>
         </ul>
 
-        <h3>🔹 Batimentos Cardíacos</h3>
+        <h3 id="batimentosCardiacos">🔹 Batimentos Cardíacos</h3>
         <p>
         Os batimentos cardíacos são gerados por impulsos elétricos espontâneos originados no <strong>nó sinoatrial</strong>, considerado o marca-passo natural do coração. 
         Esses impulsos garantem a contração coordenada das câmaras cardíacas. 
         Em repouso, a frequência média de um adulto saudável varia entre <strong>60 e 100 batimentos por minuto (bpm)</strong>.
         </p>
 
-        <h3>🔹 Ciclo Cardíaco</h3>
+        <h3 id="cicloCardiaco">🔹 Ciclo Cardíaco</h3>
         <p>
         Cada batimento cardíaco é composto por duas fases principais:
         </p>
@@ -192,6 +226,56 @@
 
     </main>
     
+    <script>
+        const menu = document.querySelector('#coracaoIndice')
+        const menuBtn = document.querySelector('.menu-open-close-btn')
+        const btnText = menuBtn.querySelector('#btn-text')
+        const arrow = menuBtn.querySelector('#btn-arrow')
+
+        function toggleMenu() {
+            const isClosed = menu.classList.contains('close-menu')
+
+            if (isClosed) {
+                menu.classList.remove('close-menu')
+                menu.classList.add('open-menu')
+                btnText.textContent = 'Fechar indice'
+                menuBtn.classList.remove('menu-close-btn')
+                menuBtn.classList.add('menu-open-btn')
+                arrow.classList.add('rotate')
+                menuBtn.setAttribute('aria-expanded', 'true')
+                menuBtn.classList.add('btn-active')
+                menu.setAttribute('aria-hidden', 'false')
+            } else {
+                const focused = document.activeElement
+                if (menu.contains(focused)) focused.blur()
+
+                menu.classList.remove('open-menu')
+                menu.classList.add('close-menu')
+                btnText.textContent = 'Abrir indice'
+                menuBtn.classList.remove('menu-open-btn')
+                menuBtn.classList.add('menu-close-btn')
+                arrow.classList.remove('rotate')
+                menuBtn.setAttribute('aria-expanded', 'false')
+                menuBtn.classList.remove('btn-active')
+                menu.setAttribute('aria-hidden', 'true')
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu)
+
+        menuBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                toggleMenu()
+            }
+        })
+    </script>
+
+    <script type="module">
+        import { enableSmoothScroll } from "../../../../utils/js/scrollTo.js"
+
+        enableSmoothScroll('#coracaoIndice')
+    </script>
     
     <script type="module">
         import { setupAutoHideMenu } from "../../../../utils/js/auto-hide-menu.js";

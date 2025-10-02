@@ -3,6 +3,159 @@
     padding: 10px;
 }
 
+/* ==============Menu Lateral============ */
+
+#coracaoIndice.close-menu {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.5s ease;
+}
+
+#coracaoIndice.open-menu {
+    width: 300px; 
+    padding: 10px;
+    max-width: 80vw;
+    opacity: 1;
+    overflow: auto;
+    transition: width 0.3s ease, opacity 0.5s ease;
+}
+
+.menu-close-btn{
+    background-image: var(--gradient-green2);
+    border: 1px solid var(--font-green);
+    border-left: none;
+}
+
+.menu-open-btn{
+    background-image: linear-gradient(var(--red2), var(--red3));
+    border: 1px solid var(--font-red);
+    border-left: none;
+}
+
+.menu-close-btn #btn-arrow{
+    text-shadow: 2px 2px 3px #000000f0;
+}
+
+.menu-open-btn  #btn-arrow{
+    text-shadow: -2px -2px 3px #000000f0;
+}
+
+#menu-container{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.menu-open-close-btn{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+
+    width: 55px;
+    height: 100px;
+    padding: 5px;
+
+    font-size: 14px;
+    line-height: 0.8em;
+    text-align: center;
+    color: white;
+
+    border-left: none;
+    border-radius: 0px 3px 3px 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.449);
+}
+
+#btn-text{
+    text-shadow: 3px 3px 5px #000000f0; 
+}
+
+#btn-arrow{
+    transition: transform 0.5s ease-in-out;
+}
+
+#coracaoIndice{
+    background-color: var(--text-bg-white);
+    height: 100%;
+
+    text-align: left;
+    border-right: 2px solid var(--red2);
+    border-bottom: 2px solid var(--red2);
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    transition:opacity 0.5s ease-in-out;
+}
+
+#container-opcoes{
+    max-height: 90dvh;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+#container-opcoes::-webkit-scrollbar {
+  width: 5px;
+}
+
+#container-opcoes::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+}
+
+#container-opcoes::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+
+#coracaoIndice h2{
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+#coracaoIndice h3{
+    text-align: left;
+    padding: 5px;
+    margin: 5px 0 0 0;
+}
+
+#coracaoIndice li{
+    list-style-position: inside;
+    list-style-type: circle;
+    font-weight: normal;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+#coracaoIndice li:nth-child(odd){
+    background-color: #ebecec;
+}
+
+#coracaoIndice a{
+    color: rgb(89, 88, 88);
+    text-decoration-color: rgb(88, 88, 88);
+}
+
+@media(max-width:850px){
+    .menu-open-close-btn{
+        margin-top: 3px;
+        padding: 8px 0px;
+        height: auto;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #coracaoIndice li:hover{
+        background-color: lightgray;
+    }
+}
+/*===============================================*/
+
+
+/* ============== menu voltar ================== */
 #backward-buttons{
     z-index: 10;
 
@@ -63,6 +216,8 @@
 #backward-buttons ul > li > a > i:hover{
     transform: scale(1.2);
 }
+
+/* ================================================ */
 
 main{
     flex-direction: column;

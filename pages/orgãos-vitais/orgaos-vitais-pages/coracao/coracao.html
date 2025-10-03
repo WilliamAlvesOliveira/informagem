@@ -9,19 +9,27 @@
 
     <link rel="stylesheet" href="../../../../css/main.css">
     <link rel="stylesheet" href="./coracao.css">
+    <link rel="stylesheet" href="./slide-menu.css">
 </head>
 <body id="coracaoPage" class="center-flex">
 
-    <div id="menu-container">
-        <div id="menu-btn">
-            <button class="menu-open-close-btn menu-close-btn" aria-expanded="false">
-                <span id="btn-text">abrir indice</span>
-                <span id="btn-arrow">➤</span>
+    <div data-slide-menu
+    id="menuContainer">
+        <div id="slide-menu-buttons">
+            <button data-slide-menu-btn
+            class="open-close-btn menu-close-btn" 
+            aria-expanded="false">
+
+                <span data-slide-menu-btn-text
+                id="btn-text">indice</span>
+                <span data-slide-menu-btn-orientation
+                 id="btn-arrow">➤</span>
+
             </button>
         </div>
 
         <nav id="coracaoIndice"
-            class="close-menu"
+            data-options
             aria-label  ="Indice coração"
             aria-hidden="true"
         >
@@ -225,50 +233,23 @@
         </p>
 
     </main>
-    
+
     <script>
-        const menu = document.querySelector('#coracaoIndice')
-        const menuBtn = document.querySelector('.menu-open-close-btn')
-        const btnText = menuBtn.querySelector('#btn-text')
-        const arrow = menuBtn.querySelector('#btn-arrow')
-
-        function toggleMenu() {
-            const isClosed = menu.classList.contains('close-menu')
-
-            if (isClosed) {
-                menu.classList.remove('close-menu')
-                menu.classList.add('open-menu')
-                btnText.textContent = 'Fechar indice'
-                menuBtn.classList.remove('menu-close-btn')
-                menuBtn.classList.add('menu-open-btn')
-                arrow.classList.add('rotate')
-                menuBtn.setAttribute('aria-expanded', 'true')
-                menuBtn.classList.add('btn-active')
-                menu.setAttribute('aria-hidden', 'false')
-            } else {
-                const focused = document.activeElement
-                if (menu.contains(focused)) focused.blur()
-
-                menu.classList.remove('open-menu')
-                menu.classList.add('close-menu')
-                btnText.textContent = 'Abrir indice'
-                menuBtn.classList.remove('menu-open-btn')
-                menuBtn.classList.add('menu-close-btn')
-                arrow.classList.remove('rotate')
-                menuBtn.setAttribute('aria-expanded', 'false')
-                menuBtn.classList.remove('btn-active')
-                menu.setAttribute('aria-hidden', 'true')
+        document.addEventListener("DOMContentLoaded", () => {
+            const optionsContainer = document.querySelector('[data-options]');
+            if (optionsContainer) {
+                const optionsWidth = optionsContainer.getBoundingClientRect().width;
+                
+                document.documentElement.style.setProperty("--options-width", `translateX(-${optionsWidth}px)`);
+            }else{
+                document.documentElement.style.setProperty("--options-width", `translateX(0)`);
             }
-        }
-
-        menuBtn.addEventListener('click', toggleMenu)
-
-        menuBtn.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                toggleMenu()
-            }
-        })
+        });
+    </script>
+    
+    <script type="module">
+        import {toggleSlideMenu} from "../../../../utils/js/slide-menu.js"
+        toggleSlideMenu()
     </script>
 
     <script type="module">

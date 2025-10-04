@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <link rel="stylesheet" href="../../../../css/main.css">
+    <link rel="stylesheet" href="../../../../css/slide-menu.css">
+    <link rel="stylesheet" href="../../../../css/auto-hide-menu.css">
+    <link rel="stylesheet" href="../../../../css/apostila.css">
     <link rel="stylesheet" href="./coracao.css">
-    <link rel="stylesheet" href="./slide-menu.css">
 </head>
-<body id="coracaoPage" class="center-flex">
+<body id="coracaoPage" class="apostila center-flex">
 
     <div data-slide-menu
     id="menuContainer">
@@ -39,15 +41,30 @@
                 <h3>Anatomia do Coração</h3>
                 <ul>
                     <li data-scroll-to="camarasDoCoracao" >Câmaras do Coração</li>
-                    <li >Válvulas Cardíacas</li>
-                    <li >Vasos Sanguíneos Principais</li>
+                    <li data-scroll-to="valvulasCardiacas">Válvulas Cardíacas</li>
+                    <li data-scroll-to="vasosSanguineos">Vasos Sanguíneos Principais</li>
                 </ul>
 
                 <h3>Funcionamento do Coração</h3>
                 <ul>
-                    <li>Circulação Dupla</li>
+                    <li data-scroll-to="circulacaoDupla">Circulação Dupla</li>
                     <li data-scroll-to="batimentosCardiacos">Batimentos Cardíacos</li>
                     <li data-scroll-to="cicloCardiaco">Ciclo Cardíaco</li>
+                </ul>
+
+                <h3>Sistema de Condução Elétrica</h3>
+                <ul>
+                    <li data-scroll-to="NoSinoatrial">Nó sinoatrial</li>
+                    <li data-scroll-to="NoAtrioventricular">Nó Atrioventricular</li>
+                    <li data-scroll-to="FeixeDeHis">Feixe de His</li>
+                    <li data-scroll-to="FibrasDePurkinje">Fibras de Purkinje</li>
+                </ul>
+
+                <h3>Tipos de Células Cardíacas</h3>
+                <ul>
+                    <li data-scroll-to="Miocardio">Miocárdio</li>
+                    <li data-scroll-to="Endocardio">Endocárdio</li>
+                    <li data-scroll-to="Pericardio">Pericárdio</li>
                 </ul>
             </div>
         </nav>
@@ -70,6 +87,12 @@
             </li>
         </ul>
     </nav>
+
+    <header class="center-flex">
+        <img id="evolution" src="../../../../src/imagens/informagem-evolution/green-informagem-evolution-m.png" alt="logo evolução informagem">
+        <img id="logoName" src="../../../../src/imagens/name-logo/name-logo-m.png" alt="informagem">
+        <img id="logoLamp" src="../../../../src/imagens/lampada-image/lampada-g .png" alt="lampada a gás simbolo da enfermagem">
+    </header>
 
     <main class="center-flex paper-main">
         <h1>Coração</h1>
@@ -105,7 +128,7 @@
             </li>
         </ul>
 
-        <h3>🔹 Válvulas Cardíacas</h3>
+        <h3 id="valvulasCardiacas">🔹 Válvulas Cardíacas</h3>
 
         <p>As válvulas cardíacas controlam o fluxo sanguíneo, impedindo o refluxo e garantindo que o sangue siga na direção correta. São elas:</p>
 
@@ -119,7 +142,7 @@
             <li><strong>Válvula aórtica:</strong> entre o ventrículo esquerdo e a aorta.</li>
         </ul>
 
-        <h3>🔹 Vasos Sanguíneos Principais</h3>
+        <h3 id="vasosSanguineos">🔹 Vasos Sanguíneos Principais</h3>
 
         <p>O coração está conectado a grandes vasos que permitem a circulação do sangue:</p>
 
@@ -140,7 +163,7 @@
         Esse mecanismo garante que o sangue percorra dois circuitos complementares: um voltado para a oxigenação nos pulmões e outro para a distribuição de oxigênio e nutrientes por todo o corpo.
         </p>
 
-        <h3>🔹 Circulação Dupla</h3>
+        <h3 id="circulacaoDupla">🔹 Circulação Dupla</h3>
         <ul>
             <li>
                 <strong>Circulação pulmonar:</strong> o sangue pobre em oxigênio é bombeado do ventrículo direito para os pulmões, através da artéria pulmonar, onde ocorre a oxigenação.
@@ -151,16 +174,13 @@
         </ul>
 
         <h3 id="batimentosCardiacos">🔹 Batimentos Cardíacos</h3>
-        <p>
-        Os batimentos cardíacos são gerados por impulsos elétricos espontâneos originados no <strong>nó sinoatrial</strong>, considerado o marca-passo natural do coração. 
-        Esses impulsos garantem a contração coordenada das câmaras cardíacas. 
+        <p>Os batimentos cardíacos são gerados por impulsos elétricos espontâneos originados no <strong>nó sinoatrial</strong>, considerado o marca-passo natural do coração.</p>
+        <p>Esses impulsos garantem a contração coordenada das câmaras cardíacas. 
         Em repouso, a frequência média de um adulto saudável varia entre <strong>60 e 100 batimentos por minuto (bpm)</strong>.
         </p>
 
         <h3 id="cicloCardiaco">🔹 Ciclo Cardíaco</h3>
-        <p>
-        Cada batimento cardíaco é composto por duas fases principais:
-        </p>
+        <p>Cada batimento cardíaco é composto por duas fases principais:</p>
         <ul>
             <li>
                 <strong>Sístole:</strong> fase de contração do coração, quando o sangue é impulsionado para fora dos ventrículos em direção aos pulmões e ao corpo.
@@ -183,19 +203,19 @@
         </p>
 
         <ul>
-            <li>
+            <li id="NoSinoatrial">
                 <strong>Nó sinoatrial (SA):</strong> conhecido como o <em>marca-passo natural</em> do coração, 
                 localiza-se no átrio direito e é responsável por iniciar os impulsos elétricos que determinam o ritmo dos batimentos.
             </li>
-            <li>
+            <li id="NoAtrioventricular">
                 <strong>Nó atrioventricular (AV):</strong> recebe os impulsos do nó sinoatrial e os retarda levemente, 
                 permitindo que os átrios se contraiam completamente antes da contração dos ventrículos.
             </li>
-            <li>
+            <li id="FeixeDeHis">
                 <strong>Feixe de His:</strong> estrutura que conduz os impulsos elétricos do nó atrioventricular para os ventrículos, 
                 garantindo a propagação da excitação elétrica.
             </li>
-            <li>
+            <li id="FibrasDePurkinje">
                 <strong>Fibras de Purkinje:</strong> ramificações do feixe de His que distribuem os impulsos elétricos por todo o miocárdio ventricular, 
                 promovendo uma contração rápida e eficiente dos ventrículos.
             </li>
@@ -213,16 +233,16 @@
         </p>
 
         <ul>
-            <li>
+            <li id="Miocardio">
                 <strong>Miocárdio:</strong> é a camada muscular mais espessa e ativa do coração, 
                 composta por células musculares especializadas que possuem a capacidade de contrair de forma rítmica e involuntária. 
                 Essa contração é responsável por bombear o sangue para os pulmões e para todo o corpo.
             </li>
-            <li>
+            <li id="Endocardio">
                 <strong>Endocárdio:</strong> camada fina que reveste internamente as câmaras cardíacas e as válvulas. 
                 Atua na proteção das estruturas internas e contribui para o fluxo suave do sangue dentro do coração.
             </li>
-            <li>
+            <li id="Pericardio">
                 <strong>Pericárdio:</strong> membrana externa que envolve e protege o coração. 
                 Além de fixá-lo dentro da cavidade torácica, o pericárdio produz um líquido lubrificante que reduz o atrito durante os batimentos cardíacos.
             </li>
@@ -233,34 +253,14 @@
         </p>
 
     </main>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const optionsContainer = document.querySelector('[data-options]');
-            if (optionsContainer) {
-                const optionsWidth = optionsContainer.getBoundingClientRect().width;
-                
-                document.documentElement.style.setProperty("--options-width", `translateX(-${optionsWidth}px)`);
-            }else{
-                document.documentElement.style.setProperty("--options-width", `translateX(0)`);
-            }
-        });
-    </script>
     
     <script type="module">
         import {toggleSlideMenu} from "../../../../utils/js/slide-menu.js"
-        toggleSlideMenu()
-    </script>
-
-    <script type="module">
         import { enableSmoothScroll } from "../../../../utils/js/scrollTo.js"
-
-        enableSmoothScroll('#coracaoIndice')
-    </script>
-    
-    <script type="module">
         import { setupAutoHideMenu } from "../../../../utils/js/auto-hide-menu.js";
         
+        toggleSlideMenu()
+        enableSmoothScroll('#coracaoIndice',-15, toggleSlideMenu)
         setupAutoHideMenu();
     </script>
 </body>

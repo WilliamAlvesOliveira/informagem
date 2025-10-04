@@ -83,7 +83,7 @@
 
 #coracaoIndice{
     background-color: var(--text-bg-white);
-    padding: 10px;
+
 
     text-align: left;
     border-right: 2px solid var(--red2);
@@ -99,6 +99,9 @@
     overflow-y: scroll;
 }
 
+#container-opcoes li{
+    padding: 10px;
+}
 #container-opcoes::-webkit-scrollbar {
   width: 5px;
 }

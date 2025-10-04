@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desculpe</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        bodY{
+            height: 90vh;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #container{
+            gap: 20px;
+            background-color: var(--red2);
+            align-items: center;
+            width: 95%;
+    
+            aspect-ratio: 10/7;
+            max-width: 800px;
+            margin-top: 30px;
+            padding: 20px;
+            border: 5px solid white;
+            outline: 3px solid var(--font-red);
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        img{
+            width: 45%;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+        
+        #containerInfo{
+            flex-direction: column;
+            gap: 20px;
+            width: 45%;
+            height:100%;
+            justify-content: space-around;
+        }
+        #container  h1{
+            font-size:  clamp(1em, 6vw, 2em);
+            text-align: center;
+        }
+
+        #container p{
+            font-size: clamp(0.8em, 3vw, 1em);
+        }
+
+        #logoContainer{
+            flex-direction: column;
+            background-color: yellow;
+            width: 80%;
+            padding: 5px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            
+        }
+
+        #evolution{
+            width: 50%;
+        }
+
+        #logoName{
+    
+            width: 90%;
+        }
+
+        #logoLamp{
+            width: 15%;
+        }
+
+        button{
+            background-color: var(--blue2);
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        @media screen and (orientation: landscape) {
+            #container{
+                width: 50%;
+            }
+
+            #container  h1{
+                font-size:  clamp(1em, 4vw, 2em);
+            }
+
+             #container p{
+                font-size: clamp(0.8em, 2vw, 1em);
+            }
+        }
+
+        @media (hover: hover) and (pointer: fine){
+            button:hover{
+                background-color: var(--blue3);
+            }
+        }
+       
+    </style>
+</head>
+<body class="center-flex">
+    <div id="container" class="center-flex">
+        <img src="./src/imagens/working.jpg.png" alt="ilustração de enfermeiro estudando enquanto outro arruma as coisas">
+        <div id="containerInfo" class="center-flex">
+            <div>
+                <h1>Desculpe!</h1>
+                <p>Esta página ainda esta em desenvolvimento!</p>
+            </div>
+            <div id="logoContainer" class="center-flex">
+                <img id="evolution" src="./src/imagens/informagem-evolution/informagem-evolution-m.png" alt="logo evolução informagem">
+                <img id="logoName" src="./src/imagens/name-logo/name-logo-m.png" alt="informagem">
+                <img id="logoLamp" src="./src/imagens/lampada-image/lampada-g .png" alt="lampada a gás simbolo da enfermagem">
+            </div>
+        </div>
+    </div>
+    
+    <button id="btn">
+        voltar
+    </button>
+
+    <script>
+        const btn = document.getElementById('btn')
+        btn.addEventListener('click', ()=>{
+            window.history.go(-1);
+        })
+        
+        
+        
+    </script>
+</body>
+</html>

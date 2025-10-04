@@ -6,6 +6,8 @@ header, footer{
     display: grid;
     grid-template-columns: 15% 70% 15%;
     width: 100%;
+    margin: auto;
+    max-width: 2000px;
     align-items: center;
     justify-content: center;
     justify-content: left;

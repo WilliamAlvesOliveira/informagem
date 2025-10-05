@@ -87,11 +87,19 @@ main section li{
     width: 100%;
 }
 
+#cardsContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: auto;
+}
+
 .orgaos-card{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
+    align-self: center;
+    gap: 5px;
     background-color: #e6f3eb;
     width: 100%;
     height: 400px;
@@ -99,6 +107,7 @@ main section li{
     padding: 5px;
     border: 1px solid var(--font-green);
     border-radius: 10px;
+    margin: auto;
 }
 
 .orgaos-card h3{
@@ -135,12 +144,13 @@ main section li{
     justify-content: center;
     background-image: var(--gradient-green1);
     width: 70%;
-    height: 50px;
+    height: auto;
     color: var(--font-green);
     text-align: center;
     text-decoration: none;
     border: 1px solid var(--font-green);
     border-radius:5px;
+    padding: 15px;
 }
 
 #btnVoltar{
@@ -155,14 +165,22 @@ main section li{
 }
 
 @media (max-width: 800px){
+    #cardsContainer{
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
     .orgaos-card{
-        width: 45%;
-        padding: 10px;
+        padding: 5px;
         height: auto;
     }
 
     .orgaos-card-info{
         display: none;
+    }
+
+    .orgaos-card a{
+        padding: 5px;
     }
 }
 

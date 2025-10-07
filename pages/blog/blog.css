@@ -3,9 +3,10 @@
 #blogPage{
     flex-direction: column;
 }
-header{
+
+#infoblogHeader{
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
     justify-content: center;
     align-items: center;
     width: 90vw;
@@ -19,11 +20,13 @@ header{
     flex-direction: column;
     
     max-width: 200px;
+    width: 50%;
     padding: 10px;
 }
 
 #infoblog{
     padding: 5px;
+    transform: translateX(-30%);
 }
 
 #evolution{
@@ -43,7 +46,7 @@ header{
     color: var(--blue2);
     font-weight: bold;
     font-style: italic;
-    font-size:clamp(1em, 12vw, 5em);
+    font-size:clamp(1em, 9vw, 3em);
 
 }
 
@@ -53,12 +56,14 @@ header{
     font-style: normal;
     color: var(--red2);
     font-style: italic;
-    font-size:clamp(1em, 12vw, 5em);
+    font-size:clamp(1em, 9vw, 3em);
 }
 
 #blogNav{
     display: grid;
     grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
     justify-content: space-between;
     gap: 5px;
     width: 1000px;
@@ -66,68 +71,104 @@ header{
 }
 
 #blogNav button{
-    display: none;
+    display: flex;
+    padding: 0px 10px;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: var(--blue2);
+    border: 2px solid var(--blue2);
+    border-radius: 3px;
 }
 
-#blogNav ul{
+.filter-form{
+    z-index: 100;
+    position: absolute;
+    padding-top: 0;
+    padding: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    color: white;
+    background-color: var(--blue2);
+    border: 2px solid white;
+    outline: 2px solid var(--blue2);
+    border-radius: 5px;
+}
+
+.filter-form fieldset{
     width: 100%;
-    align-self: start;
-    padding: 15px 3px;
-    justify-content:flex-start ;
-    list-style: none;
+    padding: 10px;
 }
 
-#blogNav ul li{
-    text-align: left;
-    padding: 10px;
+legend{
+    font-weight: bold;
+    padding: 0px 5px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--green1);
+  color: red;
+}
+
+
+fieldset label{
+    display: block;
+    width: 100%;
+    padding: 3px;
+    padding-right: 30px;
+    cursor: pointer;
 }
 
 #searchField{
     justify-self: end;
-    gap: 5px;
     font-weight: bold;
+}
+
+
+#Options{
+    grid-row: 2;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.3s ease;
+}
+
+#Options.visible{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#btnArrow{
+    transition: transform 0.5s ease;
+}
+
+#searchField{
+    gap: 5px;
 }
 
 #searchInputIco{
     display: none;
 }
 
-
+#searchInput{
+    width: 100%;
+}
 
 @media screen and (max-width: 600px){
-    #blogNav{
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
-        align-items: center;
-    }
-
-    #navOptions{
-        grid-row: 2;
-    }
-
-    #blogNav button{
-        display: block;
-        padding: 10px;
-        margin: auto;
-    }
-
-    #blogNav ul{
-        z-index: 100;
-        position: absolute;
-        display: none;
-
-        background-color: var(--main-bg);
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    #blogNav ul li{
-       width: 100%;
-    }
     #searchInputIco{
         display: inline;
     }
 
     #searchInputText{
         display: none;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #filterBtn:hover{
+        background-color: var(--blue3);
     }
 }

@@ -5,44 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFO Blog</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./blog.css">
 
     
 </head>
 <body id="blogPage" class="center-flex">
-    <header>
-        <span id="logo" class="center-flex">
+    <header id="infoblogHeader" role="banner">
+        <a id="logo" class="center-flex"
+        href="../../home.html">
             <img id="evolution" src="../../src/imagens/informagem-evolution/informagem-evolution-m.png" alt="logo evolução informagem">
             <img id="logoName" src="../../src/imagens/name-logo/name-logo-m.png" alt="informagem">
             <img id="logoLamp" src="../../src/imagens/lampada-image/lampada-g .png" alt="lampada a gás simbolo da enfermagem">
-        </span>
+        </a>
 
-        <span id="infoblog">
+        <h1 id="infoblog">
             <span id="INFO">INFO</span><span id="blog">Blog</span>
-        </span>
+        </h1>
     </header>
 
-    <nav id="blogNav" class="center-flex">
-        <button>menu</button>
+    <nav id="blogNav" class="center-flex" aria-label="Navegação do InfoBlog">
+        <button id="filterBtn" class="center-flex"
+        aria-controls="Options"
+        aria-expanded="false">
+            <span class="material-symbols-outlined" aria-hidden="true">filter_list</span>
+            <span>Filtros</span>
+            <span id="btnArrow" aria-hidden="true">▼</span>
+        </button>
         
-        <div id="navOptions">
-            <ul class="center-flex">
-                <li>opção</li>
-                <li>opção</li>
-                <li>opção</li>
-                <li>opção</li>
-            </ul>
-        </div>
+        <section id="Options" class="inactive" aria-label="Filtros e ordenação">
+            <form class="filter-form center-flex">
+                <fieldset>
+                    <legend>Ordenar</legend>
+
+                    <label>
+                        <input type="radio" name="ordenar" value="mais recente" checked>
+                        Mais recentes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="ordenar" value="menos recentes">
+                        Menos recentes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="ordenar" value="mais relevantes">
+                        Mais relevantes
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Filtros</legend>
+                    <label>
+                        <input type="checkbox" name="filtros" value="assunto1">
+                        Assunto 1
+                    </label>
+                    <label>
+                        <input type="checkbox" name="filtros" value="assunto2">
+                        Assunto 2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="filtros" value="assunto3">
+                        Assunto 3
+                    </label>
+                    <label>
+                        <input type="checkbox" name="filtros" value="assunto4">
+                        Assunto 4
+                    </label>
+                </fieldset>
+            </form>
+        </section>
         
         <div id="searchField" class="center-flex">
-
-            <label for="searchField">
-                <span id="searchInputText">buscar</span>
-                <span id="searchInputIco">O</span></label>
-            <input id="searchInput" type="text" placeholder="buscar">
+            <label for="searchInput" class="center-flex">
+                <span id="searchInputText">Buscar</span>
+                <span id="searchInputIco" class="material-symbols-outlined" aria-hidden="true">search</span>
+            </label>
+            <input id="searchInput" type="text" placeholder="Buscar no InfoBlog" aria-label="Campo de busca do blog">
         </div>
     </nav>
+
 
     <main class="paper-main">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, id ullam sequi rem ab sed. Aperiam eligendi eos, repellendus omnis distinctio libero, ipsam laborum atque enim a ut, temporibus rem?
@@ -51,5 +96,16 @@
         Perferendis tenetur nobis quis harum debitis quas eos exercitationem, inventore voluptatum! Amet qui animi aspernatur numquam non, ad laboriosam minus ipsam velit doloremque perspiciatis molestias eligendi sapiente distinctio officia eos!</p>
     </main>
     
+    <script type="module">
+        import {switchMenu} from './blogPageJS.js'
+
+        const btn = document.querySelector('#filterBtn')
+        const container = document.querySelector('#Options')
+        const icon = document.querySelector('#btnArrow')
+        
+        btn.addEventListener('click', () => {
+            switchMenu(btn,container, icon)
+        })
+    </script>
 </body>
 </html>

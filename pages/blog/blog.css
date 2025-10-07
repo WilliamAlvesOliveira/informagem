@@ -157,6 +157,10 @@ fieldset label{
     width: 100%;
 }
 
+main{
+    margin-top: 5px;
+}
+
 @media screen and (max-width: 600px){
     #searchInputIco{
         display: inline;
@@ -168,7 +172,7 @@ fieldset label{
 }
 
 @media (hover: hover) and (pointer: fine) {
-    #filterBtn:hover{
+    #filterBtn:hover, fieldset label:hover{
         background-color: var(--blue3);
     }
 }

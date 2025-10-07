@@ -1,0 +1,78 @@
+#feedContainer{
+    max-width: 800px;
+    width: 100%;
+
+    margin: auto;
+}
+
+.post{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#feedContainer h2{
+    margin-bottom: 10px;
+}
+
+#feedContainer h3{
+    margin-bottom: 5px;
+}
+
+#feedContainer p{
+    margin-bottom: 10px;
+}
+
+#feedContainer img{
+    width: 100%;
+    margin: auto;
+}
+
+.collection{
+    position: relative;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.collection button{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    padding: 15px 8px;
+    border-radius: 5px;
+    color: white;
+}
+
+.backward{
+    left: 0;
+}
+
+.forward{
+    right: 0;
+}
+
+.imagesContainer{
+    position: relative;
+    flex-direction: column;
+    aspect-ratio: 1 /1;
+    max-width: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    max-height: 600px;
+}
+
+.imgInfo{
+    position: absolute; /* sobrepõe a imagem */
+    bottom: 5px;       /* distância do fundo da imagem */
+    right: 50%;        /* distância da direita */
+    background-color: rgba(0,0,0,0.5); /* semitransparente */
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transform: translateX(50%);
+}

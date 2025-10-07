@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./blog.css">
+    <link rel="stylesheet" href="./feed.css">
 
     
 </head>
@@ -90,10 +91,22 @@
 
 
     <main class="paper-main">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, id ullam sequi rem ab sed. Aperiam eligendi eos, repellendus omnis distinctio libero, ipsam laborum atque enim a ut, temporibus rem?
-        Recusandae laboriosam nobis ad vitae magnam iure doloremque magni velit debitis esse fugit quae distinctio, neque sint doloribus, cum a dolores! Ab voluptate excepturi maxime sunt numquam consequuntur sapiente quidem.
-        Qui architecto nam necessitatibus eius corporis soluta amet fugiat tempora tenetur sint. Explicabo tempora inventore illum quae laborum mollitia, sed consequuntur cum animi architecto nesciunt laudantium voluptatem veritatis suscipit id!
-        Perferendis tenetur nobis quis harum debitis quas eos exercitationem, inventore voluptatum! Amet qui animi aspernatur numquam non, ad laboriosam minus ipsam velit doloremque perspiciatis molestias eligendi sapiente distinctio officia eos!</p>
+        <div id="feedContainer">
+            <h2>titulo do post</h2>
+            <h3>subtitulos dos posts</h3>
+            <p>texto do post   --- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta quia quasi laboriosam ab itaque aliquid natus a, odit ipsum asperiores eius quaerat voluptatibus autem aspernatur incidunt distinctio quam deleniti commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque at ullam quidem debitis accusamus fugit earum sapiente vitae fuga. Voluptate quae sequi distinctio quas quo esse consequuntur laborum! Quaerat, quo.</p>
+            <img src="../../src/imagens/notebookImg.png" alt="">
+
+            <div class="collection">
+                <button id="backward"><</button>
+                <button id="forward">></button>
+                <div id="imagesContainer" class="center-flex">
+                    <img src="../../src/imagens/notebookImg.png" alt="">
+
+                    <div id="imgInfo"></div>
+                </div>
+            </div>
+        </div>
     </main>
     
     <script type="module">
@@ -106,6 +119,33 @@
         btn.addEventListener('click', () => {
             switchMenu(btn,container, icon)
         })
+    </script>
+
+    <script type="module">
+        import {renderPosts} from './JS/postsRender;.js'
+        const json = [
+        {
+            content: [
+            { type: "title", value: "Título do post" },
+            { type: "subtitle", value: "Subtítulo opcional" },
+            { type: "text", value: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia possimus quae molestias expedita asperiores illum enim quam voluptate perspiciatis dolor! Totam, nam quo nesciunt quisquam dolorem suscipit id tempora consequaturIllum ea porro esse repudiandae dolorum omnis voluptatum ducimus unde, ullam, delectus dolores maxime reprehenderit. Magni illum ipsam iste hic nostrum, excepturi voluptate? Voluptate quibusdam, dolorum esse ut autem aliquam!Corporis ipsum aut, odit, quae vitae expedita laboriosam dolor cupiditate libero, obcaecati molestiae ad? Quia, libero ab fugit enim inventore tempora accusamus, excepturi tenetur quae officiis sint. Recusandae, at nihil." },
+            {type: 'img', value: ["../../src/imagens/notebookImg.png","../../src/imagens/working.jpg.png","../../src/imagens/enfermeiros/enfermeiro-p.png"]}
+            ]
+        },
+        {
+            content: [
+            { type: "title", value: "Segundo Post" },
+            { type: "text", value: "Só um parágrafo" },
+            {type:'img', value: "../../src/imagens/notebookImg.png"}
+        ]
+        }
+        ];
+
+        const feedContainer = document.querySelector('#feedContainer');
+
+        renderPosts(feedContainer, json)
+        
+    
     </script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+const posts = [
+  {
+    id: "post-001",
+    title: "A evolução da enfermagem moderna",
+    date: "2025-10-07T19:45:00Z",
+    author: {
+      name: "William Alves",
+      avatar: "../../src/imagens/autores/william.png"
+    },
+    tags: ["enfermagem", "história", "profissão"],
+    content: [
+      { type: "title", value: "A evolução da enfermagem moderna" },
+      { type: "subtitle", value: "Do cuidado empírico à ciência aplicada" },
+      { type: "text", value: "A enfermagem evoluiu ao longo dos séculos..." },
+      {
+        type: "img",
+        value: [
+          "../../src/imagens/enfermagem/antiga.jpg",
+          "../../src/imagens/enfermagem/moderna.jpg"
+        ]
+      }
+    ],
+    references: [
+      { label: "OMS - História da Enfermagem", url: "https://www.who.int/" }
+    ],
+    meta: {
+      views: 183,
+      likes: 42,
+      featured: true
+    }
+  }
+];
+
+🧠 Dicas de boas práticas
+
+Datas sempre em formato ISO (UTC):
+
+Isso facilita ordenação e comparação sem ambiguidade de fuso.
+
+Exemplo: "2025-10-07T20:30:00Z"
+
+Tags minúsculas e sem acentos:
+
+Ex: "educacao", "enfermagem", "cuidados".
+
+Assim, o sistema de filtro fica mais previsível e fácil de comparar.
+
+IDs únicos:
+
+Você pode gerar algo como "post-" + Date.now() ou usar UUIDs.
+
+Conteúdo modular:
+
+Se quiser, pode adicionar outros type no futuro:
+
+"quote" → para citações.
+
+"list" → para listas de tópicos.
+
+"video" → para vídeos embutidos.
+
+"link" → para anexos ou artigos relacionados.

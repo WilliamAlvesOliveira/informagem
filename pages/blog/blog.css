@@ -173,6 +173,11 @@ main{
     margin-top: 5px;
 }
 
+mark{
+    background-color: var(--green2);
+    color: var(--font-green);
+}
+
 @media screen and (max-width: 600px){
     #searchField button{
         padding: 0;

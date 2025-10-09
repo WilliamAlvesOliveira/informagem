@@ -115,7 +115,7 @@ export function renderPosts(container, posts) {
                     return;
             }
 
-            if (element && item.type !== 'img') element.textContent = item.value;
+            if (element && item.type !== 'img') element.innerHTML = item.value;
             if (element) article.appendChild(element);
         });
 

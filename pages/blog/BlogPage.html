@@ -148,7 +148,7 @@
     href="../../home.html">Voltar</a>
  
     <script type="module">
-        import {switchMenu} from './JS/blogPageJS.js'
+        import {switchMenu} from './JS/blogPageMenu.js'
 
         const btn = document.querySelector('#filterBtn')
         const container = document.querySelector('#Options')
@@ -162,6 +162,7 @@
     <script type="module">
         import { filterPosts } from './JS/filterPosts.js'
         import { renderPosts } from './JS/postsRender.js'
+        import { search } from './JS/search.js'
 
         const postsJson = [
         {
@@ -209,17 +210,38 @@
         const feedContainer = document.querySelector('#feedContainer')
 
         function updateFeed() {
-            const result = filterPosts(postsJson)
+            // 1. Filtra e ordena posts
+            let result = filterPosts(postsJson)
+
+            // 2. Aplica busca
+            const query = searchInput.value.trim()
+            if (query) {
+                result = search(result, query)
+            }
+
+            // 3. Renderiza resultado final
             renderPosts(feedContainer, result)
         }
 
-       const optionsContainer = document.getElementById('Options')
+        const optionsContainer = document.getElementById('Options')
 
         optionsContainer.addEventListener('change', (event) => {
             const target = event.target
             if (target.matches('input[type="checkbox"][name="tag"], input[type="radio"][name="sort"]')) {
                 updateFeed()
             } 
+        })
+
+        const searchInput = document.getElementById('searchInput')
+        const searchBtn = document.getElementById('searchBtn')
+
+        searchBtn.addEventListener('click', () => {
+            updateFeed()
+        })
+
+        
+        searchInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') updateFeed()
         })
 
         updateFeed()

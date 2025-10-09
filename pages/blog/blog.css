@@ -46,7 +46,7 @@
     color: var(--blue2);
     font-weight: bold;
     font-style: italic;
-    font-size:clamp(1em, 9vw, 3em);
+    font-size:clamp(1em, 9vw, 2.7em);
 
 }
 
@@ -56,7 +56,7 @@
     font-style: normal;
     color: var(--red2);
     font-style: italic;
-    font-size:clamp(1em, 9vw, 3em);
+    font-size:clamp(1em, 9vw, 2.7em);
 }
 
 #blogNav{
@@ -79,6 +79,10 @@
     background-color: var(--blue2);
     border: 2px solid var(--blue2);
     border-radius: 3px;
+}
+
+#blogNav button[aria-expanded="true"]{
+    background-color: var(--blue3);
 }
 
 .filter-form{
@@ -149,19 +153,31 @@ fieldset label{
     gap: 5px;
 }
 
+#searchInput{
+    width: 100%;
+    padding: 3px;
+    border: 2px solid var(--blue2);
+    border-radius: 4px;
+}
+
+#searchField button{
+    padding: 3px;
+}
+
 #searchInputIco{
     display: none;
 }
 
-#searchInput{
-    width: 100%;
-}
 
 main{
     margin-top: 5px;
 }
 
 @media screen and (max-width: 600px){
+    #searchField button{
+        padding: 0;
+    }
+
     #searchInputIco{
         display: inline;
     }
@@ -172,7 +188,7 @@ main{
 }
 
 @media (hover: hover) and (pointer: fine) {
-    #filterBtn:hover, fieldset label:hover{
+    #blogNav button:hover, fieldset label:hover{
         background-color: var(--blue3);
     }
 }

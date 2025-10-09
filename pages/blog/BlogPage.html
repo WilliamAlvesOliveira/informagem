@@ -43,49 +43,83 @@
                     <legend>Ordenar</legend>
 
                     <label>
-                        <input type="radio" name="ordenar" value="mais recente" checked>
+                        <input type="radio" name="sort" value="mais recente" checked>
                         Mais recentes
                     </label>
 
                     <label>
-                        <input type="radio" name="ordenar" value="menos recentes">
+                        <input type="radio" name="sort" value="menos recentes">
                         Menos recentes
                     </label>
 
                     <label>
-                        <input type="radio" name="ordenar" value="mais relevantes">
+                        <input type="radio" name="sort" value="mais relevantes">
                         Mais relevantes
                     </label>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="filtros">
                     <legend>Filtros</legend>
                     <label>
-                        <input type="checkbox" name="filtros" value="assunto1">
-                        Assunto 1
+                        <input type="checkbox" 
+                        name="tag" 
+                        value="teste"
+                        checked>
+                        Teste
                     </label>
                     <label>
-                        <input type="checkbox" name="filtros" value="assunto2">
-                        Assunto 2
+                        <input type="checkbox" 
+                        name="tag" 
+                        value="enfermagem"
+                        checked>
+                        Enfermagem
                     </label>
                     <label>
-                        <input type="checkbox" name="filtros" value="assunto3">
-                        Assunto 3
+                        <input type="checkbox" 
+                        name="tag" 
+                        value="informativo"
+                        checked>
+                        Informativo
                     </label>
                     <label>
-                        <input type="checkbox" name="filtros" value="assunto4">
-                        Assunto 4
+                        <input type="checkbox"
+                        name="tag" 
+                        value="saude"
+                        checked>
+                        Saúde
+                    </label>
+                    <label>
+                        <input type="checkbox" 
+                        name="tag" 
+                        value="cuidados"
+                        checked>
+                        Cuidados
+                    </label>
+                    <label>
+                        <input type="checkbox" 
+                        name="tag" 
+                        value="prevencao"
+                        checked>
+                        Prevenção
+                    </label>
+                    <label>
+                        <input type="checkbox" 
+                        name="tag" 
+                        value="prevencao2"
+                        checked>
+                        Prevenção2
                     </label>
                 </fieldset>
             </form>
         </section>
         
         <div id="searchField" class="center-flex">
-            <label for="searchInput" class="center-flex">
+            <input id="searchInput" type="text" placeholder="Buscar no InfoBlog" aria-label="Campo de busca do blog">
+            <button id="searchBtn">
                 <span id="searchInputText">Buscar</span>
                 <span id="searchInputIco" class="material-symbols-outlined" aria-hidden="true">search</span>
-            </label>
-            <input id="searchInput" type="text" placeholder="Buscar no InfoBlog" aria-label="Campo de busca do blog">
+            </button>
+            
         </div>
     </nav>
 
@@ -108,9 +142,13 @@
             </div>
         </div>
     </main>
-    
+
+    <a id="btnVoltar"
+    class="center-flex" 
+    href="../../home.html">Voltar</a>
+ 
     <script type="module">
-        import {switchMenu} from './blogPageJS.js'
+        import {switchMenu} from './JS/blogPageJS.js'
 
         const btn = document.querySelector('#filterBtn')
         const container = document.querySelector('#Options')
@@ -122,30 +160,69 @@
     </script>
 
     <script type="module">
-        import {renderPosts} from './JS/postsRender;.js'
-        const json = [
+        import { filterPosts } from './JS/filterPosts.js'
+        import { renderPosts } from './JS/postsRender.js'
+
+        const postsJson = [
         {
+            id: 'post-001',
+            title: 'Primeiro Post',
+            date: "2025-10-07T19:45:00Z",
+            author: { name: "William Alves" },
+            tags: ['teste', 'enfermagem'],
             content: [
-            { type: "title", value: "Título do post" },
             { type: "subtitle", value: "Subtítulo opcional" },
-            { type: "text", value: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia possimus quae molestias expedita asperiores illum enim quam voluptate perspiciatis dolor! Totam, nam quo nesciunt quisquam dolorem suscipit id tempora consequaturIllum ea porro esse repudiandae dolorum omnis voluptatum ducimus unde, ullam, delectus dolores maxime reprehenderit. Magni illum ipsam iste hic nostrum, excepturi voluptate? Voluptate quibusdam, dolorum esse ut autem aliquam!Corporis ipsum aut, odit, quae vitae expedita laboriosam dolor cupiditate libero, obcaecati molestiae ad? Quia, libero ab fugit enim inventore tempora accusamus, excepturi tenetur quae officiis sint. Recusandae, at nihil." },
-            {type: 'img', value: ["../../src/imagens/notebookImg.png","../../src/imagens/working.jpg.png","../../src/imagens/enfermeiros/enfermeiro-p.png"]}
-            ]
+            { type: "text", value: "Lorem ipsum dolor sit amet..." },
+            { type: 'img', value: ["../../src/imagens/notebookImg.png", "../../src/imagens/working.jpg.png", "../../src/imagens/enfermeiros/enfermeiro-p.png"] }
+            ],
+            references: null,
+            meta: { views: 100 }
         },
         {
+            id: 'post-002',
+            title: 'Sinais Vitais: O que são e por que monitorar',
+            date: '2025-10-05T19:45:00Z',
+            author: { name: 'Enfermeiro IA' },
+            tags: ['informativo', 'saude', 'cuidados'],
             content: [
-            { type: "title", value: "Segundo Post" },
-            { type: "text", value: "Só um parágrafo" },
-            {type:'img', value: "../../src/imagens/notebookImg.png"}
-        ]
+            { type: 'img', value: ["./postImages/card1.png", "./postImages/card2.png", "./postImages/card3.png"] }
+            ],
+            references: null,
+            meta: { views: 12 }
+        },
+        {
+            id: 'post-003',
+            title: 'Terceiro Post',
+            date: "2025-10-04T19:45:00Z",
+            author: { name: "Enfermeiro 2" },
+            tags: ['prevencao', 'cuidados'],
+            content: [
+            { type: "text", value: "Lorem ipsum dolor sit amet..." },
+            { type: 'img', value: ["../../src/imagens/notebookImg.png"] },
+            { type: 'text', value: "possimus quae molestias expedita asperiores..." }
+            ],
+            references: [{ label: "OMS - História da Enfermagem", url: "https://www.who.int/" }],
+            meta: { views: 30 }
         }
-        ];
+        ]
 
-        const feedContainer = document.querySelector('#feedContainer');
+        const feedContainer = document.querySelector('#feedContainer')
 
-        renderPosts(feedContainer, json)
-        
-    
+        function updateFeed() {
+            const result = filterPosts(postsJson)
+            renderPosts(feedContainer, result)
+        }
+
+       const optionsContainer = document.getElementById('Options')
+
+        optionsContainer.addEventListener('change', (event) => {
+            const target = event.target
+            if (target.matches('input[type="checkbox"][name="tag"], input[type="radio"][name="sort"]')) {
+                updateFeed()
+            } 
+        })
+
+        updateFeed()
     </script>
 </body>
 </html>

@@ -178,6 +178,11 @@ mark{
     color: var(--font-green);
 }
 
+.empty{
+    text-align: center;
+    color: var(--red2);
+}
+
 @media screen and (max-width: 600px){
     #searchField button{
         padding: 0;

@@ -56,7 +56,7 @@ export function renderPosts(container, posts) {
     if (posts.length === 0) {
         container.innerHTML = `
         <div class="empty">
-            <h2>Nenhum post encontrado</h2>
+            <h2>Nenhum post encontrado!</h2>
         </div>
         `
         return

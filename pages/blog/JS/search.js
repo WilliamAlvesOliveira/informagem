@@ -1,32 +1,48 @@
 'use strict'
 
 export function search(posts, query) {
-  if (!query) return posts;
 
-  const regEx = new RegExp(`(${query})`, 'gi');
+    if (!query) return posts;
 
-  return posts.map(post => {
-    const newPost = { ...post };
+    const regEx = new RegExp(`(${query})`, 'gi');
+    let hasMatch = false;
 
-    newPost.title = post.title.replace(regEx, '<mark>$1</mark>');
+    const highlightedPosts = posts.map(post => {
 
-    newPost.content = post.content.map(item => {
-      if (item.type === 'text' || item.type === 'subtitle') {
-        return {
-          ...item,
-          value: item.value.replace(regEx, '<mark>$1</mark>')
+        const newPost = { 
+            ...post, 
+            author: { ...post.author }, 
+            content: post.content.map(item => ({ ...item })) 
         };
-      }
-      return item;
+
+        if (regEx.test(post.title)) {
+            newPost.title = post.title.replace(regEx, '<mark>$1</mark>');
+            hasMatch = true;
+        }
+
+        if (regEx.test(post.author.name)) {
+            newPost.author.name = post.author.name.replace(regEx, '<mark>$1</mark>');
+            hasMatch = true;
+        }
+
+        newPost.content = newPost.content.map(item => {
+            if (item.type === 'text' || item.type === 'subtitle') {
+                if (regEx.test(item.value)) {
+                    item.value = item.value.replace(regEx, '<mark>$1</mark>');
+                    hasMatch = true;
+                }
+            }
+            return item;
+        });
+
+        if (post.tags.some(tag => regEx.test(tag))) {
+            hasMatch = true;
+        }
+
+        return newPost;
     });
 
-    return newPost;
-  }).filter(post => {
-  
-    return regEx.test(post.title) ||
-           post.content.some(item => 
-             (item.type === 'text' || item.type === 'subtitle') && regEx.test(item.value)
-           ) ||
-           post.tags.some(tag => regEx.test(tag));
-  });
+    if (!hasMatch) return posts;
+
+    return highlightedPosts;
 }

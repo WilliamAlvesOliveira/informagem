@@ -165,6 +165,10 @@ main section li{
 }
 
 @media (max-width: 800px){
+    #orgaosVitais header{
+        width: 80%;
+    }
+
     #cardsContainer{
         grid-template-columns: 1fr 1fr;
         gap: 10px;

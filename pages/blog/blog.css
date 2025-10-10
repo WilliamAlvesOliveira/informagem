@@ -1,26 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
 
+
+/* ========== ESTRUTURA GERAL ========== */
+
 #blogPage{
     flex-direction: column;
 }
+
+
+/* ========== CABEÇALHO ========== */
 
 #infoblogHeader{
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: center;
     align-items: center;
+
     width: 90vw;
     max-width: 2000px;
+
+    font-size: clamp(1em, 6vw, 2.7em);
 
     margin: auto;
 }
 
+
+/* ========== LOGO ========== */
+
 #logo{
     grid-column: 1;
+
     flex-direction: column;
-    
+
     max-width: 200px;
     width: 50%;
+
     padding: 10px;
 }
 
@@ -41,23 +55,25 @@
     width: 20%;
 }
 
+
+/* ========== TÍTULOS ========== */
+
 #INFO{
     font-family: 'Times New Roman', Times, serif;
     color: var(--blue2);
     font-weight: bold;
     font-style: italic;
-    font-size:clamp(1em, 9vw, 2.7em);
-
 }
 
 #blog{
     font-family: "Niconne", cursive;
     font-weight: 400;
-    font-style: normal;
-    color: var(--red2);
     font-style: italic;
-    font-size:clamp(1em, 9vw, 2.7em);
+    color: var(--red2);
 }
+
+
+/* ========== NAVEGAÇÃO DO BLOG ========== */
 
 #blogNav{
     display: grid;
@@ -66,17 +82,22 @@
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+
     width: 1000px;
     max-width: 96%;
 }
 
 #blogNav button{
     display: flex;
-    padding: 0px 10px;
     gap: 10px;
+
+    padding: 0px 10px;
+
     color: white;
     font-weight: bold;
+
     background-color: var(--blue2);
+
     border: 2px solid var(--blue2);
     border-radius: 3px;
 }
@@ -85,16 +106,21 @@
     background-color: var(--blue3);
 }
 
+
+/* ========== FORMULÁRIO DE FILTRO ========== */
+
 .filter-form{
     z-index: 100;
     position: absolute;
-    padding-top: 0;
-    padding: 5px;
     flex-direction: column;
     align-items: flex-start;
 
+    padding-top: 0;
+    padding: 5px;
+
     color: white;
     background-color: var(--blue2);
+
     border: 2px solid white;
     outline: 2px solid var(--blue2);
     border-radius: 5px;
@@ -112,10 +138,9 @@ legend{
 
 input[type="checkbox"],
 input[type="radio"] {
-  accent-color: var(--green1);
-  color: red;
+    accent-color: var(--green1);
+    color: red;
 }
-
 
 fieldset label{
     display: block;
@@ -125,17 +150,40 @@ fieldset label{
     cursor: pointer;
 }
 
+
+/* ========== CAMPO DE PESQUISA ========== */
+
 #searchField{
     justify-self: end;
     font-weight: bold;
+    gap: 5px;
 }
 
+#searchInput{
+    width: 100%;
+    padding: 3px;
+
+    border: 2px solid var(--blue2);
+    border-radius: 4px;
+}
+
+#searchField button{
+    padding: 3px;
+}
+
+#searchInputIco{
+    display: none;
+}
+
+
+/* ========== OPÇÕES DE FILTRO ========== */
 
 #Options{
     grid-row: 2;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+
     transition: opacity 0.5s ease, visibility 0.3s ease;
 }
 
@@ -149,25 +197,8 @@ fieldset label{
     transition: transform 0.5s ease;
 }
 
-#searchField{
-    gap: 5px;
-}
 
-#searchInput{
-    width: 100%;
-    padding: 3px;
-    border: 2px solid var(--blue2);
-    border-radius: 4px;
-}
-
-#searchField button{
-    padding: 3px;
-}
-
-#searchInputIco{
-    display: none;
-}
-
+/* ========== CONTEÚDO PRINCIPAL ========== */
 
 main{
     margin-top: 5px;
@@ -183,7 +214,24 @@ mark{
     color: var(--red2);
 }
 
+
+/* ========== RESPONSIVIDADE ========== */
+
 @media screen and (max-width: 600px){
+    #infoblogHeader{
+        width: 100vw;
+        grid-template-columns: 40% 60%;
+    }
+
+    #logo{
+        width: 100%;
+    }
+
+    #infoblog{
+        transform: none;
+        text-align: center;
+    }
+
     #searchField button{
         padding: 0;
     }
@@ -198,7 +246,8 @@ mark{
 }
 
 @media (hover: hover) and (pointer: fine) {
-    #blogNav button:hover, fieldset label:hover{
+    #blogNav button:hover,
+    fieldset label:hover{
         background-color: var(--blue3);
     }
 }

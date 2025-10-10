@@ -220,7 +220,7 @@ mark{
 @media screen and (max-width: 600px){
     #infoblogHeader{
         width: 100vw;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 35% 65%;
     }
 
     #logo{

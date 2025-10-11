@@ -57,10 +57,13 @@
     margin-bottom: 4px;
 }
 
-.form-field .err-msg{
+.err-msg{
+    line-height: 0.8em;
+}
+
+.err-msg{
     color: red;
-    font-size: 12px;
-    height: 12px;
+    font-size: 0.8em;
 }
 
 #formContainer button{
@@ -90,6 +93,8 @@
 #lampada{
     width: 70px;
 }
+
+.err-msg{}
 
 @media(max-width: 600px){
     #pageContainer{

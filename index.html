@@ -23,25 +23,25 @@
                 <img src="./src/imagens/enfermeiros/enfermeiro-p.png" alt="imagem de um enfermeiro">
             </picture>
 
-            <form id="formulario" class="center-flex" >
-                <div id="formContainer" class="center-flex">
+            <div id="formulario" class="center-flex" >
+                <form id="formContainer" class="center-flex">
                     <div class="form-field">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
-                        <p class="err-msg" aria-live="polite">não encontrado</p>
+                        <span class="err-msg" aria-live="polite"></span>
                     </div>
 
                     <div class="form-field">
                         <label for="password">Senha</label>
                         <input id="password" type="password" name="password" required>
-                        <p class="err-msg" aria-live="polite"></p>
+                        <span class="err-msg" aria-live="polite"></span>
                     </div>
 
                     <button id="login-btn">Login</button>
 
                     <a href="#">Cadastrar</a>
-                </div>
-            </form>
+                </form>
+            </div>
 
         </section>
         

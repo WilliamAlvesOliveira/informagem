@@ -94,8 +94,6 @@
     width: 70px;
 }
 
-.err-msg{}
-
 @media(max-width: 600px){
     #pageContainer{
         grid-template-rows: 80% 17% 3%;

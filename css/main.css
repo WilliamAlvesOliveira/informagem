@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Light&family=Oleo+Script:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -77,4 +80,8 @@ main p{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.not-active{
+    text-decoration: line-through;
 }

@@ -116,11 +116,15 @@
 }
 
 #coracaoIndice h2{
+    font-family: "Niconne";
+    font-size: 2em;
+    color: var(--red2);
     margin-left: 5px;
     margin-bottom: 5px;
 }
 
 #coracaoIndice h3{
+    font-family: "Oleo Script", system-ui;
     text-align: left;
     padding: 5px;
     margin: 5px 0 0 0;

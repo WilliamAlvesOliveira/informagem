@@ -1,0 +1,66 @@
+#bioquimica{
+    flex-direction: column;
+
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: "Love Light", cursive;
+    color: var(--font-green);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+    text-shadow: 3px 3px 5px #64f6547a;
+}
+
+.disciplina-container{
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom:30px;
+}
+
+.disciplina-content{
+    margin: auto;
+    max-width: 800px;
+}
+
+hr{
+    margin-bottom: 20px;
+    background-color: var(--font-green);
+}
+
+h2{
+    text-align: center;
+}
+
+.topicos h3{
+    margin-left: 20px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.topicos ul{
+    list-style-position: inside;
+}
+
+.topicos li{
+    margin-top: 5px;
+}
+
+.options{
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    background-image: var(--gradient-green1);
+    color: var(--font-green);
+    border: 1px solid var(--font-green);
+    border-radius: 5px;
+}

@@ -1,2 +1,2 @@
 # informagem
-Plataforma de estudos de ~Enfermagem
+Plataforma de estudos de para auxiliar no curso de Enfermagem.

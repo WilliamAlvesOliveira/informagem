@@ -5,53 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informagem - login</title>
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/login-page.css">
+    <link rel="stylesheet" href="./css/landing-page.css">
 
 </head>
 
-<body id="loginPage" class="center-flex">
-    <main id="pageContainer" class="center-flex">
-        <picture id="logo">
-            <source media="(min-width: 400px)" srcset="./src/imagens/name-logo/name-logo.png">
-            <img src="./src/imagens/name-logo/name-logo-m.png" alt="Imformagem">
-        </picture>
-        
-        <section id="login" class="center-flex">
-            <picture id="enfermeiro">
-                <source media="(min-width: 800px)" srcset="./src/imagens/enfermeiros/enfermeiro-g.png">
-                <source media="(min-width: 400px)" srcset="./src/imagens/enfermeiros/enfermeiro-m.png">
-                <img src="./src/imagens/enfermeiros/enfermeiro-p.png" alt="imagem de um enfermeiro">
-            </picture>
+<body id="landingPage">
+    <header class="center-flex">
+        <div id="logoArea" class="center-flex">
+            <img id="evolution" src="src/imagens/informagem-evolution/green-informagem-evolution-m.png" alt="logo evolução informagem">
+            <img id="logoName" src="src/imagens/name-logo/name-logo-m.png" alt="informagem">
+        </div>
+        <div id="slogan">
+            <h1>Informagem</h1>
+            <p>Plataforma de apoio aos estudos em enfermagem</p>
+        </div>
+    </header>
 
-            <div id="formulario" class="center-flex" >
-                <form id="formContainer" class="center-flex">
-                    <div class="form-field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="err-msg" aria-live="polite"></span>
-                    </div>
+    <main>
+        <a href="home.html" id="acessarPagina" class="green-btn">acessar a página</a>
+        <section id="aboutPage">
+            <div id="aboutPageTxt">
+                <h2>Sobre o Informagem</h2>
+                <p><strong>Informagem é uma plataforma digital de apoio aos estudos em enfermagem.</strong></p>
+                <p>A plataforma foi pensada como um complemento ao estudo tradicional, permitindo que o usuário consulte conceitos, pratique com exercícios e utilize o site como um espaço contínuo de apoio ao seu processo de aprendizagem.</p>
+                <p>Com uma interface simples e foco na experiência do usuário, o Informagem busca transformar a forma como conteúdos de enfermagem podem ser explorados em um ambiente digital.</p>
 
-                    <div class="form-field">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" required>
-                        <span class="err-msg" aria-live="polite"></span>
-                    </div>
-
-                    <button id="login-btn">Login</button>
-
-                    <a href="#">Cadastrar</a>
-                </form>
+                <small>⚠️<strong>Importante</strong>- O conteúdo ainda não foi revisado por profissionais da área da saúde e deve ser utilizado apenas como material experimental.</small>
             </div>
 
+            <div id="colabore">
+                <h2>🤝 <strong>Colabore com o Informagem</strong></h2>
+                <p>O Informagem é um projeto em desenvolvimento e aberto à colaboração.</p>
+                <p>A proposta da plataforma é crescer e evoluir com o apoio de pessoas interessadas em educação, tecnologia e saúde.</p>
+                <p>Desenvolvedores, designers e profissionais ou estudantes da área da enfermagem podem contribuir de diferentes formas, como revisão de conteúdo, sugestões de melhorias ou desenvolvimento de novas funcionalidades.</p>
+                <p>Se você se interessou pela ideia do projeto, é possível acompanhar e colaborar através do repositório no GitHub.</p>
+            </div>
         </section>
-        
-        <picture id="evolutionLogo">
-            <img src="./src/imagens/informagem-evolution/informagem-evolution-p.png" alt="Logo de evolução da página informagem">
-        </picture>
-        
-        <img id="lampada" src="src/imagens/lampada-image/lampada-g .png" alt="Imagem de uma lâmpada a gás simbolo da enfermagem">
-
-        <a href="home.html"> entrar como convidado</a>
     </main>
+   
+    <a href="home.html" id="enterLink" class="green-btn">
+        Acesse a página para conferir o conteúdo.
+    </a>
+
+    <footer>
+        <p>desenvolvido por: <strong><a href="https://www.linkedin.com/in/william-oliveira-a047a7268/" target="_blank">William Oliveira</a></strong></p>
+    </footer>
 </body>
 </html>

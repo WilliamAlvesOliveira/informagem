@@ -1,0 +1,157 @@
+#landingPage{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: clamp(15px, 4vw, 50px);
+
+    background-image:linear-gradient(var(--blue2),var(--blue3));
+    border-radius: 10px 10px 0  0;
+    padding: 10px;
+    color: white;
+}
+
+#logoArea{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+    width: 300px;
+    max-width: 40vw ;
+}
+
+#logoArea img{
+    max-width: 100%;
+}
+
+#evolution{
+    width: 40%;
+}
+
+#logoLamp{
+    width: 20%;
+}
+
+#slogan{
+    flex-grow: 1;
+    border-left: 2px solid var(--red2);
+    padding-left: 5px;
+}
+
+#slogan h1{
+    font-size: clamp(22px, 3vw, 1.5em);
+    margin-bottom: 5px;
+}
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+    max-width: 1300px;
+    align-self: center;
+    padding: 10px;
+    margin: 3px;
+}
+
+#acessarPagina{
+    margin: 0 3px;
+    width: 80vw;
+    padding: 5px 10px;
+    align-self: center;
+    border: 1px solid var(--font-green);
+    border-radius: 5px;
+    text-align: center;
+    color: var(--font-green);
+}
+
+#aboutPage{
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    gap: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#aboutPage div{
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    gap: 10px;
+    background-color: var(--text-bg-white);
+    border: 1px solid var(--blue3);
+    border-left: 3px solid var(--red2);
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 5px;
+}
+
+
+#aboutPage h2{
+    font-size: 1.2em;
+}
+
+#aboutPage p{
+    text-indent: 0;
+    max-width: 600px;
+}
+
+#enterLink{
+    max-width: 80vw;
+    margin: 20px;
+    padding: 10px 20px;
+    align-self: center;
+    text-align: center;
+    font-size: clamp(18px, 1vw, 1.3em);
+    color: var(--font-green);
+    border: 1px solid var(--font-green);
+    border-radius: 10px;
+}
+
+.green-btn{
+   background-image: var(--gradient-green1); 
+}
+
+.green-btn:hover{
+    background-image: var(--gradient-green2);
+}
+
+footer{
+    background-color: var(--blue3);
+    padding: 3px 6px;
+    color: white;
+    text-align: center;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (orientation:landscape){
+    header{
+        flex-flow: row nowrap;
+    }
+
+    #slogan{
+        align-self: flex-end;
+    }
+
+    main{
+        flex-flow: row nowrap;
+        gap: 10px;
+    }
+
+    #acessarPagina{
+        align-self: flex-start;
+        width: 140px;
+    }
+
+    #aboutPage{
+        flex-flow: row nowrap;
+    }
+}

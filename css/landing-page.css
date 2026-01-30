@@ -100,6 +100,10 @@ main{
     max-width: 600px;
 }
 
+#aboutPage li{
+    list-style-position: inside;
+}
+
 #enterLink{
     max-width: 80vw;
     margin: 20px;

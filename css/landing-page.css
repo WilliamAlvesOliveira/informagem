@@ -117,7 +117,8 @@ main{
 }
 
 .green-btn{
-   background-image: var(--gradient-green1); 
+   background: var(--gradient-green1); 
+
 }
 
 .green-btn:hover{

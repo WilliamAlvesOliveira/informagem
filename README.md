@@ -82,6 +82,7 @@ Você pode colaborar abrindo **issues**, enviando **pull requests** ou entrando 
 ## 👤 Autor
 
 Desenvolvido por **William Oliveira**
+Assistencia e Plaejamento: Renan Silva
 
 - GitHub: https://github.com/WilliamAlvesOliveira  
 - LinkedIn: https://www.linkedin.com/in/william-oliveira-a047a7268/
